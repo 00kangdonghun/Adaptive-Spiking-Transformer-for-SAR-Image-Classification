@@ -1,0 +1,54 @@
+# ===== Dataset =====
+dataset: mstar
+num_classes: 10
+img_size: 128           
+
+# ===== Model size =====
+dim: 384                # embed_dims
+num_heads: 6
+
+# dim: 512                # embed_dims
+# num_heads: 8
+
+patch_size: 8           # 128/8=16 → 16×16=256 tokens
+
+mlp_ratio: 4
+
+# depths: 8               # depths=8
+depths: 4               # depths=4
+
+
+# ===== Normalization =====
+mean: [0.5, 0.5, 0.5]
+std:  [0.5, 0.5, 0.5]
+crop_pct: 1.0
+scale: [1.0, 1.0]
+interpolation: bicubic
+train_interpolation: bicubic
+
+# ===== Augmentation =====
+aa: null
+mixup: 0.0
+cutmix: 0.0
+reprob: 0.0
+hflip: 0.0
+vflip: 0.0
+color_jitter: 0.0
+
+# ===== Optimization / Schedule =====
+amp: true
+batch_size: 64
+val_batch_size: 64
+lr: 5e-4
+min_lr: 1e-5
+sched: cosine
+weight_decay: 5e-2
+
+epochs: 100
+
+cooldown_epochs: 10
+warmup_epochs: 5
+warmup_lr: 1e-6
+opt: adamw
+smoothing: 0.05
+workers: 8
