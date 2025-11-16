@@ -111,32 +111,21 @@ All download passwords: abcd
 | Spikingformer-2-256 | 16     |  2.57M      | 81.3                    | 98.3            |
 
 
-## Acknowledgement & Contact Information
-Related project: [spikformer](https://github.com/ZK-Zhou/spikformer), [pytorch-image-models](https://github.com/huggingface/pytorch-image-models), [CML](https://github.com/zhouchenlin2096/Spikingformer-CML), [spikingjelly](https://github.com/fangwei123456/spikingjelly).
-
-For help or issues using this git, please submit a GitHub issue.
-
-For other communications related to this git, please contact zhouchl@pcl.ac.cn or zhouchenlin19@mails.ucas.ac.cn.
-
 
 ## Reference
 If you find this repo useful, please consider citing:
 ```
+@article{zhou2022spikformer,
+  title={Spikformer: When spiking neural network meets transformer},
+  author={Zhou, Zhaokun and Zhu, Yuesheng and He, Chao and Wang, Yaowei and Yan, Shuicheng and Tian, Yonghong and Yuan, Li},
+  journal={arXiv preprint arXiv:2209.15425},
+  year={2022}
+}
 @article{zhou2023spikingformer,
   title={Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network},
   author={Zhou, Chenlin and Yu, Liutao and Zhou, Zhaokun and Zhang, Han and Ma, Zhengyu and Zhou, Huihui and Tian, Yonghong},
   journal={arXiv preprint arXiv:2304.11954},
   year={2023},
   url={https://arxiv.org/abs/2304.11954}
-}
-
-@article{zhou2024direct,
-  title={Direct training high-performance deep spiking neural networks: a review of theories and methods},
-  author={Zhou, Chenlin and Zhang, Han and Yu, Liutao and Ye, Yumin and Zhou, Zhaokun and Huang, Liwei and Ma, Zhengyu and Fan, Xiaopeng and Zhou, Huihui and Tian, Yonghong},
-  journal={Frontiers in Neuroscience},
-  volume={18},
-  pages={1383844},
-  year={2024},
-  publisher={Frontiers Media SA}
 }
 ```
