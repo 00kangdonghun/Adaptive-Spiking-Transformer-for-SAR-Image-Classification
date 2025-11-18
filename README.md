@@ -6,7 +6,17 @@ SAR-Spikingformer introduces SAR-specific data augmentation and a dynamic 'block
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/64926ecf-a90f-46ad-9d5f-2288e0e216fa" />
 
 
+## Datasets
+<img width="237" height="631" alt="image" src="https://github.com/user-attachments/assets/bafcdf75-37df-428a-9606-4f080d85f509" />
+<img width="269" height="637" alt="image" src="https://github.com/user-attachments/assets/89915346-73aa-4260-905c-1646eb526bfe" />
+<img width="855" height="1234" alt="image" src="https://github.com/user-attachments/assets/141eadf7-5a39-4f07-8227-f9c173503a6b" />
+
+
 ## Requirements
+<img width="759" height="1218" alt="image" src="https://github.com/user-attachments/assets/836504b4-35cf-4eeb-8f2a-3a51b9545b05" />
+<img width="703" height="1220" alt="image" src="https://github.com/user-attachments/assets/28f87c34-7265-4d83-adb9-291f095a4b85" />
+<img width="609" height="468" alt="image" src="https://github.com/user-attachments/assets/c9b94e1b-dd9a-4120-b4e2-5e30b567b0f9" />
+
 timm==0.6.12; cupy==11.4.0; torch==1.12.1; spikingjelly==0.0.0.0.12; pyyaml; 
 
 data prepare: ImageNet with the following folder structure, you can extract imagenet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4).
