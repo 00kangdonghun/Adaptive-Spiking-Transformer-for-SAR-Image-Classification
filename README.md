@@ -8,6 +8,97 @@ SAR-Spikingformer introduces SAR-specific data augmentation and a dynamic 'block
 
 ## Datasets
 data prepare: data with the following folder structure, you can extract image정)
+### MSTAR-10classes
+https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
+```
+│MSTAR-10classes/
+├──train/
+│  ├── 2S1
+│  ├── BMP2
+│  ├── BRDM2
+│  ├── BTR60
+│  ├── ......
+│
+├──test/
+│  ├── 2S1
+│  ├── BMP2
+│  ├── BRDM2
+│  ├── BTR60
+│  ├── ......
+```
+
+### EuroSAT
+https://zenodo.org/records/7711810#.ZAm3k-zMKEA
+```
+│EuroSAT/
+├──train/
+│  ├── AnnualCrop
+│  ├── Forest
+│  ├── HerbaceousVegatation
+│  ├── Highway
+│  ├── ......
+│
+├──test/
+│  ├── AnnualCrop
+│  ├── Forest
+│  ├── HerbaceousVegatation
+│  ├── Highway
+│  ├── ......
+```
+
+
+## Requirements
+timm==0.6.12; cupy==11.4.0; torch==1.12.1; spikingjelly==0.0.0.0.12; pyyaml; 
+
+## Train
+### Training  on ImageNet
+Setting hyper-parameters in imagenet.yml
+
+```
+cd imagenet
+python -m torch.distributed.launch --nproc_per_node=8 train.py
+```
+
+### Testing ImageNet Val data
+Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ), passwords: abcd
+```
+cd imagenet
+python test.py
+```
+
+### Training  on CIFAR10
+Setting hyper-parameters in cifar10.yml
+```
+cd cifar10
+python train.py
+```
+
+### Training  on CIFAR100
+Setting hyper-parameters in cifar100.yml
+```
+cd cifar10
+python train.py
+```
+
+### Training  on DVS128 Gesture
+```
+cd dvs128-gesture
+python train.py
+```
+
+### Training  on CIFAR10-DVS
+```
+cd cifar10-dvs
+python train.py
+```
+
+### Energy Consumption Calculation on ImageNet
+Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ), passwords: abcd
+```
+cd imagenet
+python energy_consumption_calculation_on_imagenet.py
+```
+
 ## Main results on ImageNet-1K
 
 | Model               | Resolution| T |  Param.     | FLOPs   |  Power |Top-1 Acc| Download |
@@ -41,7 +132,6 @@ All download passwords: abcd
 | :---:               | :---:  | :---:       | :---:                   |:---:            |
 | Spikingformer-2-256 | 10     |  2.57M      | 79.9                    | 96.2            |
 | Spikingformer-2-256 | 16     |  2.57M      | 81.3                    | 98.3            |
-
 
 
 ## Reference
