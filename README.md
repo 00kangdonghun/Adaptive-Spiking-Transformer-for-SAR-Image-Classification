@@ -7,10 +7,44 @@ SAR-Spikingformer introduces SAR-specific data augmentation and a dynamic 'block
 
 
 ## Datasets
-<img width="237" height="631" alt="image" src="https://github.com/user-attachments/assets/bafcdf75-37df-428a-9606-4f080d85f509" />
-<img width="269" height="637" alt="image" src="https://github.com/user-attachments/assets/89915346-73aa-4260-905c-1646eb526bfe" />
-<img width="855" height="1234" alt="image" src="https://github.com/user-attachments/assets/141eadf7-5a39-4f07-8227-f9c173503a6b" />
-
+data prepare: data with the following folder structure, you can extract imagenet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4).
+(수정)
+### MSTAR-10classes
+https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
+```
+│MSTAR-10classes/
+├──train/
+│  ├── 2S1
+│  ├── BMP2
+│  ├── BRDM2
+│  ├── BTR60
+│  ├── ......
+│
+├──test/
+│  ├── 2S1
+│  ├── BMP2
+│  ├── BRDM2
+│  ├── BTR60
+│  ├── ......
+```
+### EuroSAT
+https://zenodo.org/records/7711810#.ZAm3k-zMKEA
+```
+│EuroSAT/
+├──train/
+│  ├── AnnualCrop
+│  ├── Forest
+│  ├── HerbaceousVegetation
+│  ├── Highway
+│  ├── ......
+│
+├──test/
+│  ├── AnnualCrop
+│  ├── Forest
+│  ├── HerbaceousVegetation
+│  ├── Highway
+│  ├── ......
+```
 
 ## Requirements
 <img width="759" height="1218" alt="image" src="https://github.com/user-attachments/assets/836504b4-35cf-4eeb-8f2a-3a51b9545b05" />
@@ -18,23 +52,6 @@ SAR-Spikingformer introduces SAR-specific data augmentation and a dynamic 'block
 <img width="609" height="468" alt="image" src="https://github.com/user-attachments/assets/c9b94e1b-dd9a-4120-b4e2-5e30b567b0f9" />
 
 timm==0.6.12; cupy==11.4.0; torch==1.12.1; spikingjelly==0.0.0.0.12; pyyaml; 
-
-data prepare: ImageNet with the following folder structure, you can extract imagenet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4).
-```
-│imagenet/
-├──train/
-│  ├── n01440764
-│  │   ├── n01440764_10026.JPEG
-│  │   ├── n01440764_10027.JPEG
-│  │   ├── ......
-│  ├── ......
-├──val/
-│  ├── n01440764
-│  │   ├── ILSVRC2012_val_00000293.JPEG
-│  │   ├── ILSVRC2012_val_00002138.JPEG
-│  │   ├── ......
-│  ├── ......
-```
 
 ## Train
 ### Training  on ImageNet
