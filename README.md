@@ -46,50 +46,36 @@ https://zenodo.org/records/7711810#.ZAm3k-zMKEA
 │  ├── ......
 ```
 
-
 ## Requirements
 timm==0.6.12; cupy==11.4.0; torch==1.12.1; spikingjelly==0.0.0.0.12; pyyaml; 
 
 ## Train
-### Training  on ImageNet
-Setting hyper-parameters in imagenet.yml
+### Training on MSTAR-10classes
+Setting hyper-parameters in MSTAR-10classes.yml
 
 ```
 cd imagenet
 python -m torch.distributed.launch --nproc_per_node=8 train.py
 ```
 
-### Testing ImageNet Val data
-Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ), passwords: abcd
+### Testing MSTAR-10classes
 ```
 cd imagenet
 python test.py
 ```
 
-### Training  on CIFAR10
-Setting hyper-parameters in cifar10.yml
+### Training on EuroSAT
+Setting hyper-parameters in EuroSAT.yml
+
 ```
-cd cifar10
-python train.py
+cd imagenet
+python -m torch.distributed.launch --nproc_per_node=8 train.py
 ```
 
-### Training  on CIFAR100
-Setting hyper-parameters in cifar100.yml
+### Testing EuroSAT
 ```
-cd cifar10
-python train.py
-```
-
-### Training  on DVS128 Gesture
-```
-cd dvs128-gesture
-python train.py
-```
-
-### Training  on CIFAR10-DVS
-```
-cd cifar10-dvs
-python train.py
+cd imagenet
+python test.py
 ```
 
 ### Energy Consumption Calculation on ImageNet
