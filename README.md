@@ -52,10 +52,15 @@ timm==0.6.12; cupy==11.4.0; torch==1.12.1; spikingjelly==0.0.0.0.12; pyyaml;
 ## Train
 ### Training on MSTAR-10classes
 Setting hyper-parameters in MSTAR-10classes.yml
-
 ```
-cd imagenet
-python -m torch.distributed.launch --nproc_per_node=8 train.py
+cd SAR
+cd MSTAR-10classes-SAR
+# 로그 폴더 만들기
+mkdir -p ./STDOUT ./STDERR
+# 로그 파일 이름 지정
+LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
+# 명령어 실행
+python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
 ### Testing MSTAR-10classes
