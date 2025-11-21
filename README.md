@@ -55,10 +55,13 @@ Setting hyper-parameters in MSTAR-10classes.yml
 ```
 cd SAR
 cd MSTAR-10classes-SAR
+
 # Create a log file
 mkdir -p ./STDOUT ./STDERR
+
 # Name the log file
 LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
+
 # Run the command
 python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
@@ -68,10 +71,13 @@ Setting hyper-parameters in EuroSAT.yml
 ```
 cd SAR
 cd EuroSAR-SAR
+
 # Create a log file
 mkdir -p ./STDOUT ./STDERR
+
 # Name the log file
 LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
+
 # Run the command
 python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
