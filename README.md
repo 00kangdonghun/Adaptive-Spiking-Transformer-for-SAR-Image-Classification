@@ -111,33 +111,34 @@ python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDER
 
 ## Result
 ### Main results on MSTAR-10classes
-
-| Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
-| ---               | ---     | ---  | ---       |  ---  |  ---    |--- |
-| spikformer-8-384 | 16.44   | 4 |  2.20     | 0.42   | 10.50   |89.50%  |
-| Spikingformer-8-384 | 16.43   | 4 |  0.08     | 0.91  | 1.21   |93.19%  |
-| Ours-8-384 | 16.45   | 4 |  0.08     | 0.54 (-40.9%)  |  0.87 (-27.76%)  |93.28%  |
-
+#### Architecture 8-384
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
-| spikformer-8-512 | 29.19   | 4 |  3.87     | 0.73   | 18.48   |89.68%  |
-| Spikingformer-8-512 | 29.17   | 4 |  0.11     | 1.61  | 1.97   |93.23%  |
-| Ours-8-512 | 29.21   | 4 |  0.11     | 0.91 (-43.78%)  |  1.33 (-27.76%)  |93.28%  |
+| spikformer | 16.44   | 4 |  2.20     | 0.42   | 10.50   |89.50%  |
+| Spikingformer | 16.43   | 4 |  0.08     | 0.91  | 1.21   |93.19%  |
+| Ours | 16.45   | 4 |  0.08     | 0.54 (-40.9%)  |  0.87 (-27.76%)  |93.28%  |
+
+#### Architecture 8-512
+| Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
+| spikformer | 29.19   | 4 |  3.87     | 0.73   | 18.48   |89.68%  |
+| Spikingformer | 29.17   | 4 |  0.11     | 1.61  | 1.97   |93.23%  |
+| Ours | 29.21   | 4 |  0.11     | 0.91 (-43.78%)  |  1.33 (-27.76%)  |93.28%  |
 
 
 ### Main results on EuroSAT
-
+#### Architecture 8-384
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
-| spikformer-8-384 | 16.44   | 4 |  0.55     | 0.08   | 2.60   |98.20%  |
-| Spikingformer-8-384 | 15.10   | 4 |  0.02     | 0.52  | 0.57   |99.17%  |
-| Ours-8-384 | 15.13   | 4 |  0.02     | 0.27 (-48.20%)  |  0.34 (-39.94%)  |99.31%  |
-
+| spikformer | 16.44   | 4 |  0.55     | 0.08   | 2.60   |98.20%  |
+| Spikingformer | 15.10   | 4 |  0.02     | 0.52  | 0.57   |99.17%  |
+| Ours | 15.13   | 4 |  0.02     | 0.27 (-48.20%)  |  0.34 (-39.94%)  |99.31%  |
+#### Architecture 8-512
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
-| spikformer-8-512 | 29.19   | 4 |  0.96     | 0.13   | 4.57   |98.51%  |
-| Spikingformer-8-512 | 26.81   | 4 |  0.03     | 0.89  | 0.93   |99.35%  |
-| Ours-8-512 | 26.85   | 4 |  0.03     | 0.41 (-54.02%)  |  0.50 (-46.53%)  |99.39%  |
+| spikformer | 29.19   | 4 |  0.96     | 0.13   | 4.57   |98.51%  |
+| Spikingformer | 26.81   | 4 |  0.03     | 0.89  | 0.93   |99.35%  |
+| Ours | 26.85   | 4 |  0.03     | 0.41 (-54.02%)  |  0.50 (-46.53%)  |99.39%  |
 
 
 ## Reference
