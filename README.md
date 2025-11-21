@@ -102,43 +102,37 @@ cd EuroSAT-SAR
 python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
-## Main results on ImageNet-1K
+## Main results on MSTAR-10classes
 
-| Model               | Resolution| T |  Param.     | FLOPs   |  Power |Top-1 Acc| Download |
-| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |:---: |
-| Spikingformer-8-384 | 224x224   | 4 |  16.81M     | 3.88G   | 4.69 mJ   |72.45  |   -    |
-| Spikingformer-8-512 | 224x224   | 4 |  29.68M     | 6.52G  | 7.46 mJ   |74.79  |     -  |
-| Spikingformer-8-768 | 224x224   | 4  |  66.34M     | 12.54G  | 13.68 mJ  |75.85  |   [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ) |
+| Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
+| spikformer-8-384 | 16.44   | 4 |  2.20     | 0.42   | 10.50   |89.50%  |
+| Spikingformer-8-384 | 16.43   | 4 |  0.08     | 0.91  | 1.21   |93.19%  |
+| Ours-8-384 | 16.45   | 4 |  0.08     | 0.54 (-40.9%)  |  0.87 (-27.76%)  |93.28%  |
 
-All download passwords: abcd
+| Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
+| spikformer-8-512 | 29.19   | 4 |  3.87     | 0.73   | 18.48   |89.68%  |
+| Spikingformer-8-512 | 29.17   | 4 |  0.11     | 1.61  | 1.97   |93.23%  |
+| Ours-8-512 | 29.21   | 4 |  0.11     | 0.91 (-43.78%)  |  1.33 (-27.76%)  |93.28%  |
 
-<!-- 
-| Spikformer-8-384 | 224x224    |  16.81M     | 6.82G   | 12.43  mJ              |70.24  |
-| Spikformer-8-512 | 224x224    |  29.68M     | 11.09G  | 18.82  mJ             |73.38  |
-| Spikformer-8-768 | 224x224    |  66.34M     | 22.09G  | 32.07  mJ             |74.81  |
--->
 
-## Main results on CIFAR10/CIFAR100
+## Main results on EuroSAT
 
-| Model                | T      |  Param.     | CIFAR10 Top-1 Acc| Download  |CIFAR100 Top-1 Acc|
-| :---:                | :---:  | :---:       |  :---:  |:---:   |:---: |
-| Spikingformer-4-256  | 4      |  4.15M     | 94.77   |   -   |77.43  |
-| Spikingformer-2-384  | 4      |  5.76M     | 95.22   |   -   |78.34  |
-| Spikingformer-4-384  | 4      |  9.32M     | 95.61    |   -  |79.09  |
-| Spikingformer-4-384-400E  | 4      |  9.32M     | 95.81    | [here](https://pan.baidu.com/s/1mjpD2gtz5ZX0M8N3jobjzA ) |79.21  |
+| Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
+| spikformer-8-384 | 16.44   | 4 |  2.20     | 0.42   | 10.50   |89.50%  |
+| Spikingformer-8-384 | 16.43   | 4 |  0.08     | 0.91  | 1.21   |93.19%  |
+| Ours-8-384 | 16.45   | 4 |  0.08     | 0.54 (-40.9%)  |  0.87 (-27.76%)  |93.28%  |
 
-All download passwords: abcd
-
-## Main results on CIFAR10-DVS/DVS128
-
-| Model               | T      |  Param.     |  CIFAR10 DVS Top-1 Acc  | DVS 128 Top-1 Acc|
-| :---:               | :---:  | :---:       | :---:                   |:---:            |
-| Spikingformer-2-256 | 10     |  2.57M      | 79.9                    | 96.2            |
-| Spikingformer-2-256 | 16     |  2.57M      | 81.3                    | 98.3            |
+| Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
+| spikformer-8-512 | 29.19   | 4 |  3.87     | 0.73   | 18.48   |89.68%  |
+| Spikingformer-8-512 | 29.17   | 4 |  0.11     | 1.61  | 1.97   |93.23%  |
+| Ours-8-512 | 29.21   | 4 |  0.11     | 0.91 (-43.78%)  |  1.33 (-27.76%)  |93.28%  |
 
 
 ## Reference
-If you find this repo useful, please consider citing:
 ```
 @article{zhou2022spikformer,
   title={Spikformer: When spiking neural network meets transformer},
