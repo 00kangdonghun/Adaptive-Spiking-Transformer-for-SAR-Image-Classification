@@ -63,13 +63,6 @@ LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
 python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
-### Testing MSTAR-10classes
-```
-cd SAR
-cd MSTAR-10classes-SAR
-python test.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
-```
-
 ### Training on EuroSAT
 Setting hyper-parameters in EuroSAT.yml
 ```
@@ -81,6 +74,14 @@ mkdir -p ./STDOUT ./STDERR
 LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
 # Run the command
 python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
+```
+
+## Test & Energy Consumption
+### Testing MSTAR-10classes
+```
+cd SAR
+cd MSTAR-10classes-SAR
+python test.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
 ### Testing EuroSAT
@@ -102,7 +103,8 @@ cd EuroSAT-SAR
 python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
-## Main results on MSTAR-10classes
+## Result
+### Main results on MSTAR-10classes
 
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
@@ -117,7 +119,7 @@ python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDER
 | Ours-8-512 | 29.21   | 4 |  0.11     | 0.91 (-43.78%)  |  1.33 (-27.76%)  |93.28%  |
 
 
-## Main results on EuroSAT
+### Main results on EuroSAT
 
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
