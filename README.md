@@ -123,9 +123,9 @@ python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDER
 
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
-| spikformer-8-384 | 16.44   | 4 |  2.20     | 0.42   | 10.50   |89.50%  |
-| Spikingformer-8-384 | 16.43   | 4 |  0.08     | 0.91  | 1.21   |93.19%  |
-| Ours-8-384 | 16.45   | 4 |  0.08     | 0.54 (-40.9%)  |  0.87 (-27.76%)  |93.28%  |
+| spikformer-8-384 | 16.44   | 4 |  0.55     | 0.08   | 2.60   |98.20%  |
+| Spikingformer-8-384 | 15.10   | 4 |  0.02     | 0.52  | 0.57   |99.17%  |
+| Ours-8-384 | 15.13   | 4 |  0.02     | 0.27 (-48.20%)  |  0.34 (-39.94%)  |99.31%  |
 
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
