@@ -7,7 +7,7 @@ SAR-Spikingformer introduces SAR-specific data augmentation and a dynamic 'block
 
 
 ## Datasets
-data prepare: data with the following folder structure, you can extract image정)
+data prepare: data with the following folder structure
 ### MSTAR-10classes
 https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
 ```
@@ -55,39 +55,51 @@ Setting hyper-parameters in MSTAR-10classes.yml
 ```
 cd SAR
 cd MSTAR-10classes-SAR
-# 로그 폴더 만들기
+# Create a log file
 mkdir -p ./STDOUT ./STDERR
-# 로그 파일 이름 지정
+# Name the log file
 LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
-# 명령어 실행
+# Run the command
 python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
 ### Testing MSTAR-10classes
 ```
-cd imagenet
-python test.py
+cd SAR
+cd MSTAR-10classes-SAR
+python test.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
 ### Training on EuroSAT
 Setting hyper-parameters in EuroSAT.yml
-
 ```
-cd imagenet
-python -m torch.distributed.launch --nproc_per_node=8 train.py
+cd SAR
+cd EuroSAR-SAR
+# Create a log file
+mkdir -p ./STDOUT ./STDERR
+# Name the log file
+LOG_PREFIX="SAR_class.$(hostname).$(date +%Y%m%d_%H%M%S)"
+# Run the command
+python train.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
 ### Testing EuroSAT
 ```
-cd imagenet
-python test.py
+cd SAR
+cd EuroSAT-SAR
+python test.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
-### Energy Consumption Calculation on ImageNet
-Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ), passwords: abcd
+### Energy Consumption Calculation
 ```
-cd imagenet
-python energy_consumption_calculation_on_imagenet.py
+cd SAR
+cd MSTAR-10classes-SAR
+python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
+```
+```
+cd SAR
+cd EuroSAT-SAR
+python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDERR/${LOG_PREFIX}.err
 ```
 
 ## Main results on ImageNet-1K
