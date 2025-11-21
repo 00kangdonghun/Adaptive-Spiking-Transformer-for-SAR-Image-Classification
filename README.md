@@ -113,7 +113,7 @@ python energy_consumption_calculation.py > ./STDOUT/${LOG_PREFIX}.out 2> ./STDER
 ### Main results on MSTAR-10classes
 
 | Model               | Param (M)| T |  MACs (G)     | ACs (G)   |  Energy Consumption (mJ) |Top-1 Acc|
-| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |
+| ---               | ---     | ---  | ---       |  ---  |  ---    |--- |
 | spikformer-8-384 | 16.44   | 4 |  2.20     | 0.42   | 10.50   |89.50%  |
 | Spikingformer-8-384 | 16.43   | 4 |  0.08     | 0.91  | 1.21   |93.19%  |
 | Ours-8-384 | 16.45   | 4 |  0.08     | 0.54 (-40.9%)  |  0.87 (-27.76%)  |93.28%  |
