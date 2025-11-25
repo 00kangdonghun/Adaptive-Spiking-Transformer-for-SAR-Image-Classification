@@ -10,6 +10,8 @@ SAR-Spikingformer introduces SAR-specific data augmentation and a dynamic 'block
 data prepare: data with the following folder structure
 ### MSTAR-10classes
 https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
+
+[data_split_code](https://github.com/00kangdonghun/Adaptive-Spiking-Transformer-for-SAR-Image-Classification/blob/main/data_split/MSTAR-10classes_train_test.py)
 ```
 │MSTAR-10classes/
 ├──train/
@@ -29,6 +31,8 @@ https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
 
 ### EuroSAT
 https://zenodo.org/records/7711810#.ZAm3k-zMKEA
+
+[data_split_code](https://github.com/00kangdonghun/Adaptive-Spiking-Transformer-for-SAR-Image-Classification/blob/main/data_split/EuroSAT_train_test.py)
 ```
 │EuroSAT/
 ├──train/
