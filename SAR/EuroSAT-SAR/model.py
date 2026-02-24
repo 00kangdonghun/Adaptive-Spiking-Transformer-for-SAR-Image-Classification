@@ -1,5 +1,5 @@
 # ======================================================================================
-# ✨ Custom Data Augmentation Classes for SAR Dataset ✨
+# Custom Data Augmentation Classes for SAR Dataset
 # ======================================================================================
 import cv2
 import numpy as np
@@ -216,7 +216,7 @@ class SpikingTokenizer(nn.Module):
 
 
 # ----------------------------
-# ✨ Top-level model (Applying Block Halting) ✨
+# Top-level model (Applying Block Halting)
 # ----------------------------
 class vit_snn(nn.Module):
     def __init__(self,
@@ -225,13 +225,13 @@ class vit_snn(nn.Module):
                  drop_rate=0., attn_drop_rate=0., drop_path_rate=0., norm_layer=nn.LayerNorm,
                  depths=8, sr_ratios=1, T=4, spike_scale=0.125, lif_tau=2.0, stages=None,
                  pretrained_cfg=None,
-                 # ✨ Add hyperparameters for Block Halting
+                 # Add hyperparameters for Block Halting
                  halting_th=0.9):
         super().__init__()
         self.num_classes = num_classes
         self.depths = depths if isinstance(depths, int) else sum(depths)
         self.T = T
-        # ✨ Early exit threshold to use during inference
+        # Early exit threshold to use during inference
         self.halting_th = halting_th
 
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, self.depths)]
@@ -251,7 +251,7 @@ class vit_snn(nn.Module):
             ) for j in range(self.depths)
         ])
         
-        # ✨ Create auxiliary classifiers to be attached after each Transformer block
+        # Create auxiliary classifiers to be attached after each Transformer block
         # Create for all blocks except the last one.
         self.halting_heads = nn.ModuleList([
             nn.Linear(embed_dims, num_classes) for _ in range(self.depths - 1)
@@ -275,7 +275,7 @@ class vit_snn(nn.Module):
             nn.init.constant_(m.bias, 0)
             nn.init.constant_(m.weight, 1.0)
 
-    # ✨ Modify forward_features for Block Halting
+    # Modify forward_features for Block Halting
     def forward_features(self, x):  # x: [T,B,C,H,W]
         x, (H, W) = self.patch_embed(x)
         
@@ -291,7 +291,7 @@ class vit_snn(nn.Module):
                 aux_output = self.halting_heads[i](aux_x.mean(0))
                 intermediate_outputs.append(aux_output)
 
-                # ✨ Execute early exit logic only in evaluation (inference) mode
+                # Execute early exit logic only in evaluation (inference) mode
                 if not self.training:
                     confidence = F.softmax(aux_output, dim=1).max(1)[0]
                     # Early exit if the confidence of all samples in the batch exceeds the threshold
@@ -304,7 +304,7 @@ class vit_snn(nn.Module):
         
         return intermediate_outputs
 
-    # ✨ Modify forward for Block Halting
+    # Modify forward for Block Halting
     def forward(self, x):  # x: [B,C,H,W]
         x = (x.unsqueeze(0)).repeat(self.T, 1, 1, 1, 1)  # [T,B,C,H,W]
         
