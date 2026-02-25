@@ -13,7 +13,7 @@ https://www.kaggle.com/datasets/ravenchencn/mstar-10-classes
 
 [data_split_code](https://github.com/00kangdonghun/Adaptive-Spiking-Transformer-for-SAR-Image-Classification/blob/main/data_split/MSTAR-10classes_train_test.py)
 ```
-│MSTAR-10classes/
+MSTAR-10classes/
 ├──train/
 │  ├── 2S1
 │  ├── BMP2
@@ -34,7 +34,7 @@ https://zenodo.org/records/7711810#.ZAm3k-zMKEA
 
 [data_split_code](https://github.com/00kangdonghun/Adaptive-Spiking-Transformer-for-SAR-Image-Classification/blob/main/data_split/EuroSAT_train_test.py)
 ```
-│EuroSAT/
+EuroSAT/
 ├──train/
 │  ├── AnnualCrop
 │  ├── Forest
