@@ -1,5 +1,4 @@
-# SAR-Spikingformer: Adaptive Spiking Transformer for SAR Image Classification, AAAI 2026 Workshop on Neuromorphic Intelligence
-[paper](https://openreview.net/pdf?id=98d4g2w0qc)
+# SAR-Spikingformer: [Adaptive Spiking Transformer for SAR Image Classification](https://openreview.net/pdf?id=98d4g2w0qc), AAAI 2026 Workshop on Neuromorphic Intelligence
 
 Based on Spikingformer, this study proposes a lightweight spiking transformer **SAR-Spikingformer** optimized for the classification of synthetic aperture radar (SAR) images.
 
